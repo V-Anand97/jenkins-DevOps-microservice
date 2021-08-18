@@ -1,11 +1,16 @@
-//declerative pipeline
 
-pipeline {
-	    agent any
+agent any 
+
+	   
 		stages {
 			stage ('Build'){
 			 steps{	
                 echo "Build"
+				echo "PATH - $PATH"
+				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
+				echo "BUILD_ID - $env.BUILD_ID"
+				echo "BUILD_TAG - $env.BUILD_TAG"
+				echo "BUILD_URL - $env.BULD_URL"
 			 }
 			}
 			 stage ('Test'){
@@ -31,4 +36,4 @@ pipeline {
 			}
 		}
 		
-}
+
